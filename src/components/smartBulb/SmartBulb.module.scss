@@ -1,0 +1,102 @@
+.smartBulbContainer {
+  background: #4f4f4f;
+  display: flex;
+  flex-direction: row;
+  .dimmerLightWrapper {
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    border: #e8dd09 4px solid;
+    border-radius: 7px;
+    height: 100px;
+
+    .slideContainer {
+      width: 100%;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 90%;
+      height: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider:hover {
+      opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 23px;
+      height: 24px;
+      border-radius: 50%;
+      background: #e8dd09;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 23px;
+      height: 24px;
+      border-radius: 50%;
+      background: #e8dd09;
+      cursor: pointer;
+    }
+  }
+
+  .colorWrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: 40%;
+
+    margin: 5px;
+    padding: 5px;
+    border: #e8dd09 4px solid;
+    border-radius: 7px;
+
+    .colorPickerText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+    }
+    .bulbSize{
+      font-size: 170px;
+    }
+
+    .colorPicker {
+      height: 150px;
+      width: 150px;
+    }
+  }
+
+  .turnedOnOff{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+
+    margin: 5px;
+    padding: 5px;
+
+    border: #e8dd09 4px solid;
+    border-radius: 7px;
+
+    .turnedOn{
+      margin: 5px;
+      color: white;
+    }
+
+  }
+}
+.styleTitle{
+  justify-content: center;
+  color: white;
+  margin: 5px;
+}

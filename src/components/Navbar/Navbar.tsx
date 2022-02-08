@@ -36,7 +36,7 @@ const Navbar = () => {
 
                 <NavItem
                     icon={<IoBulbOutline/>}
-                    title={'Lighting'}
+                    title={'Lights'}
                     status={connected}
                     onClick={clickLightHandler}
                 />
