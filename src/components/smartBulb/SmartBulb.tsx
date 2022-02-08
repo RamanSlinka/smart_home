@@ -12,10 +12,20 @@ const SmartBulb = () => {
 
     return (
         <div className={style.smartBulbContainer}>
-            <div>name: Light control</div>
-            <div>type: Bulb</div>
+            <div className={style.infoWrapper}>
+                <div className={style.mainTitle}>
+                    {/*name:*/}
+                    LIGHTS CONTROL</div>
+                <div className={style.styleTitle}>
+                    {/*type:*/}
+                    Bulb</div>
+                <div className={style.styleTitle}>
+                    {/*status:*/}
+                    connected
+                   {/*or  disconnected / poor connection*/}
+                </div>
+            </div>
 
-            <div>status: connected / disconnected / poor connection</div>
 
 
             {/*Brightness*/}
@@ -24,7 +34,7 @@ const SmartBulb = () => {
                 <div className={style.slideContainer}>
                     <input
                         className={style.slider}
-                        onChange={(e: any   ) => setRangeVal(e.target.value)}
+                        onChange={(e: any   ) => setRangeVal(e.target.value)} //   ? any
                         type="range"
                         min="1" max="100"
                        //  value={rangeVal}
