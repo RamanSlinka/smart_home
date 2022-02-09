@@ -1,9 +1,16 @@
 import React, {FC} from 'react';
 import style from'./Switch.module.scss'
 
-const Switch:FC<any> = ({ isOn, handleToggle }) => {
+type SwitchPropsType = {
+    isOn: boolean
+    handleToggle: () => void
+}
+
+const Switch:FC<SwitchPropsType> = ({ isOn, handleToggle }) => {
     return (
-        <>
+        <div className={style.turnedOnOff}>
+                <p className={style.styleTitle}>Light</p>
+                <span className={style.turnedOn}>off</span>
             <input
                 checked={isOn}
                 onChange={handleToggle}
@@ -12,13 +19,14 @@ const Switch:FC<any> = ({ isOn, handleToggle }) => {
                 type="checkbox"
             />
             <label
-                style={{ background: isOn && '#06D6A0' }}
+                style={{ background: isOn ? '#06D6A0' : '' }}
                 className={style.reactSwitchLabel}
                 htmlFor={`react-switch-new`}
             >
                 <span className={style.reactSwitchButton} />
             </label>
-        </>
+            <span className={style.turnedOn}>on</span>
+        </div>
     );
 };
 export default Switch;

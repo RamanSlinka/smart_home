@@ -95,23 +95,7 @@
     }
   }
 
-  .turnedOnOff{
-    display: flex;
-    flex-direction: row;
-    height: 100px;
 
-    margin: 5px;
-    padding: 5px;
-
-    border: #e8dd09 4px solid;
-    border-radius: 7px;
-
-    .turnedOn{
-      margin: 5px;
-      color: white;
-    }
-
-  }
 }
 .styleTitle{
   justify-content: center;

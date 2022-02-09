@@ -60,15 +60,12 @@ const SmartBulb = () => {
 
             </div>
 
-            <div className={style.turnedOnOff}>
-                <p className={style.styleTitle}>Light</p>
-                <span className={style.turnedOn}>off</span>
+
                 <Switch
                     isOn={valueSwitch}
                     handleToggle={() => setValueSwitch(!valueSwitch)}
                 />
-                <span className={style.turnedOn}>on</span>
-            </div>
+
 
             {/*<DateAndClock/>*/}
 
