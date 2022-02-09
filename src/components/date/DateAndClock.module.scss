@@ -1,0 +1,36 @@
+.dateContainer {
+  display: flex;
+  flex-direction: column;
+
+  border: #e8dd09 4px solid;
+  border-radius: 7px;
+  padding: 10px;
+
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+  .clock {
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+    margin: 10px auto;
+  }
+
+  .layer {
+    background: #e8dd09;
+    border: #e8dd09 1px solid;
+    margin: 5px;
+  }
+
+  .dayOfWeek {
+    font-size: 25px;
+    color: white;
+  }
+
+  .date {
+    color: white;
+    font-size: 35px;
+    margin: 3px auto;
+  }
+}

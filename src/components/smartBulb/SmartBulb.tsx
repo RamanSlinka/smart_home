@@ -1,13 +1,13 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import {HexColorPicker} from 'react-colorful';
 import {RiLightbulbFlashFill} from "react-icons/ri";
 import style from './SmartBulb.module.scss';
 import Switch from "../switch/Switch";
+import DateAndClock from "../date/DateAndClock";
 
 const SmartBulb = () => {
     const [valueSwitch, setValueSwitch] = useState(false);
     const [color, setColor] = useState("#9d9e9e");
-
     const [rangeVal, setRangeVal] = useState(null);
 
     return (
@@ -15,17 +15,18 @@ const SmartBulb = () => {
             <div className={style.infoWrapper}>
                 <div className={style.mainTitle}>
                     {/*name:*/}
-                    LIGHTS CONTROL</div>
+                    LIGHTS CONTROL
+                </div>
                 <div className={style.styleTitle}>
                     {/*type:*/}
-                    Bulb</div>
+                    Bulb
+                </div>
                 <div className={style.styleTitle}>
                     {/*status:*/}
                     connected
-                   {/*or  disconnected / poor connection*/}
+                    {/*or  disconnected / poor connection*/}
                 </div>
             </div>
-
 
 
             {/*Brightness*/}
@@ -34,12 +35,12 @@ const SmartBulb = () => {
                 <div className={style.slideContainer}>
                     <input
                         className={style.slider}
-                        onChange={(e: any   ) => setRangeVal(e.target.value)} //   ? any
+                        onChange={(e: any) => setRangeVal(e.target.value)} //   ? any
                         type="range"
                         min="1" max="100"
-                       //  value={rangeVal}
+                        //  value={rangeVal}
                         id="myRange"/>
-<span className={style.styleTitle}>{rangeVal} %</span>
+                    <span className={style.styleTitle}>{rangeVal} %</span>
                 </div>
             </div>
 
@@ -68,6 +69,9 @@ const SmartBulb = () => {
                 />
                 <span className={style.turnedOn}>on</span>
             </div>
+
+            {/*<DateAndClock/>*/}
+
         </div>
     );
 };
