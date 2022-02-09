@@ -50,7 +50,7 @@ const Navbar = () => {
 
                 <NavItem
                     icon={<FaTemperatureLow/>}
-                    title={'Heater'}
+                    title={'Temperature'}
                     status={connected}
                 />
 

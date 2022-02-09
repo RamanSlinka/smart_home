@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import style from './SmartOutlet.module.scss'
-import Switch from "../switch/Switch";
+import Switch from "../../components/switch/Switch";
 import smartOutlet from '../../assets/images/outlet.jpeg'
 
 const SmartOutlet = () => {

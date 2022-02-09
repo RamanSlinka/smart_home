@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {HexColorPicker} from 'react-colorful';
 import {RiLightbulbFlashFill} from "react-icons/ri";
 import style from './SmartBulb.module.scss';
-import Switch from "../switch/Switch";
-import DateAndClock from "../date/DateAndClock";
+import Switch from "../../components/switch/Switch";
+import DateAndClock from "../../components/date/DateAndClock";
 
 const SmartBulb = () => {
     const [valueSwitch, setValueSwitch] = useState(false);
