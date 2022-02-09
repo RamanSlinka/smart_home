@@ -1,0 +1,31 @@
+.smartOutletContainer {
+  background: #4f4f4f;
+  display: flex;
+  flex-direction: row;
+
+  height: 65vh;
+  max-width: 100%;
+
+  .smartOutletImage {
+    width: 200px;
+  }
+}
+
+.blockWrapper {
+  margin: 5px;
+  padding: 5px;
+  border: #e8dd09 4px solid;
+  border-radius: 7px;
+  height: 100px;
+
+  .mainTitle {
+    color: white;
+    font-size: 20px;
+  }
+
+  .styleTitle {
+    justify-content: center;
+    color: white;
+    margin: 5px;
+  }
+}
