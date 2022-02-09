@@ -5,6 +5,7 @@ import {IoIosAddCircleOutline, IoMdOutlet} from "react-icons/io";
 import {FaTemperatureLow} from "react-icons/fa";
 import style from "./Navbar.module.scss"
 import image from "../../assets/images/smartHome_.jpeg"
+import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
     const [connected, setConnect] = useState(true);
@@ -27,6 +28,7 @@ const Navbar = () => {
             </div>
             <div className={style.iconNameWrapper}>
                 <NavItem
+
                     icon={<AiOutlineHome/>}
                     title={'Home'}
                     status={null}
