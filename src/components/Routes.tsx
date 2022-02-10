@@ -18,8 +18,8 @@ const RoutesPage = () => {
         <Routes>
             <Route path={PATH.HOME} element={<Home/>}/>
             <Route path={PATH.SMART_BULB} element={<SmartBulb/>}/>
-            <Route path={PATH.SMART_BULB} element={<SmartOutlet/>}/>
-            <Route path={PATH.SMART_BULB} element={<SmartTemperatureSensor/>}/>
+            <Route path={PATH.SMART_OUTLET} element={<SmartOutlet/>}/>
+            <Route path={PATH.SMART_TEMPERATURE_SENSOR} element={<SmartTemperatureSensor/>}/>
         </Routes>
     );
 }

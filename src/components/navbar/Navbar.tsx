@@ -6,6 +6,7 @@ import {FaTemperatureLow} from "react-icons/fa";
 import style from "./Navbar.module.scss"
 import image from "../../assets/images/smartHome_.jpeg"
 import {NavLink} from "react-router-dom";
+import {PATH} from "../Routes";
 
 const Navbar = () => {
     const [connected, setConnect] = useState(true);
@@ -22,40 +23,42 @@ const Navbar = () => {
         <div className={style.navbarContainer}>
             <div>
                 <img className={style.logo}
-                    src={image}
-                    alt="logo"
-                    />
+                     src={image}
+                     alt="logo"
+                />
             </div>
             <div className={style.iconNameWrapper}>
-                <NavItem
+                <NavLink to={PATH.HOME}>
+                    <NavItem
+                        icon={<AiOutlineHome/>}
+                        title={'Home'}
+                        status={null}
+                    />
+                </NavLink>
 
-                    icon={<AiOutlineHome/>}
-                    title={'Home'}
-                    status={null}
+                <NavLink to={PATH.SMART_BULB}>
+                    <NavItem
+                        icon={<IoBulbOutline/>}
+                        title={'Lights'}
+                        status={connected}
+                        onClick={clickLightHandler}
+                    />
+                </NavLink>
 
-                />
-
-
-                <NavItem
-                    icon={<IoBulbOutline/>}
-                    title={'Lights'}
-                    status={connected}
-                    onClick={clickLightHandler}
-                />
-
-
-                <NavItem
-                    icon={<IoMdOutlet/>}
-                    title={'Energy'}
-                    status={connected}
-                />
-
-                <NavItem
-                    icon={<FaTemperatureLow/>}
-                    title={'Temperature'}
-                    status={connected}
-                />
-
+                <NavLink to={PATH.SMART_OUTLET}>
+                    <NavItem
+                        icon={<IoMdOutlet/>}
+                        title={'Energy'}
+                        status={connected}
+                    />
+                </NavLink>
+                <NavLink to={PATH.SMART_TEMPERATURE_SENSOR}>
+                    <NavItem
+                        icon={<FaTemperatureLow/>}
+                        title={'Temperature'}
+                        status={connected}
+                    />
+                </NavLink>
                 <NavItem
                     icon={<IoIosAddCircleOutline/>}
                     status={null}
@@ -69,14 +72,16 @@ const Navbar = () => {
 const NavItem: FC<any> = (props) => {
     return (
         <div className={style.itemContainer}
-        onClick={props.onClick}
+             onClick={props.onClick}
         >
             <div className={style.iconWrapper}>
+                {/*<NavLink to={props.path}>*/}
                 <div className={style.icon}> {props.icon}</div>
+                {/*</NavLink>*/}
                 <h3 className={style.iconName}>{props.title}</h3>
                 {props.status !== null
                     ? <div className={style.statusWrapper}><p className={style.status}>
-                        {props.status ? 'Connected': 'Disconnected'}</p>
+                        {props.status ? 'Connected' : 'Disconnected'}</p>
 
                     </div>
                     : ''}
