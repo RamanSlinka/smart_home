@@ -67,7 +67,7 @@ const SmartBulb = () => {
                 />
 
 
-            {/*<DateAndClock/>*/}
+            <DateAndClock/>
 
         </div>
     );

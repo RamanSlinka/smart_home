@@ -5,14 +5,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-.logo{
-  height: 100%;
-}
+
+  .logo {
+    height: 100%;
+  }
 
   .iconNameWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
+
     .iconWrapper {
       display: flex;
       flex-direction: column;
@@ -34,17 +36,28 @@
         color: white;
         font-weight: bold;
       }
-      .statusWrapper{
+
+      .statusWrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin: 10px 10px 0;
-        .status{
+
+        .status {
           font-size: 12px;
           color: white;
         }
       }
 
     }
+  }
+
+  .bottomLayer {
+    background: #e8dd09;
+    width: 100vmax;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 120px;
   }
 }

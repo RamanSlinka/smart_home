@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import style from "./DateAndClock.module.scss";
+import whiteLogo from '../../assets/images/smartHome_white.jpeg'
 
 const DateAndClock = () => {
 
@@ -33,6 +34,10 @@ const DateAndClock = () => {
                     })}
 
                 </p>
+            </div>
+            <div>
+                <img className={style.whiteLogo}
+                    src={whiteLogo} alt="whiteLogo"/>
             </div>
         </div>
     );

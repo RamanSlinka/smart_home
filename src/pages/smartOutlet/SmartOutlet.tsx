@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import style from './SmartOutlet.module.scss'
 import Switch from "../../components/switch/Switch";
 import smartOutlet from '../../assets/images/outlet.jpeg'
+import DateAndClock from "../../components/date/DateAndClock";
 
 const SmartOutlet = () => {
     const [valueSwitch, setValueSwitch] = useState(false);
@@ -38,7 +39,7 @@ const SmartOutlet = () => {
                      src={smartOutlet} alt="smart outlet"/>
             </div>
 
-            {/*<DateAndClock/>*/}
+            <DateAndClock/>
         </div>
     );
 };

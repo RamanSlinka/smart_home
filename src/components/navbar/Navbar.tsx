@@ -64,6 +64,7 @@ const Navbar = () => {
                     status={null}
                 />
             </div>
+            <span className={style.bottomLayer}></span>
         </div>
     );
 };

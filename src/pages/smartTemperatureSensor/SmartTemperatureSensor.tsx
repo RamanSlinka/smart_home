@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './SmartTemperatureSensor.module.scss';
 import temperature from '../../assets/images/temperatura.jpeg';
+import DateAndClock from "../../components/date/DateAndClock";
 
 const SmartTemperatureSensor = () => {
 
@@ -25,7 +26,7 @@ const SmartTemperatureSensor = () => {
             <div className={style.blockWrapper}>
                 <h3 className={style.styleTitle}>Temperature</h3>
                 {/*{temperature}*/}
-                <p className={style.styleTitle}>22 &deg;C</p>
+                <p className={style.styleTitle}>19 &deg;C</p>
             </div>
 
             <div className={style.blockWrapper}
@@ -34,7 +35,7 @@ const SmartTemperatureSensor = () => {
                      src={temperature} alt="smart outlet"/>
             </div>
 
-            {/*<DateAndClock/>*/}
+            <DateAndClock/>
         </div>
     );
 };
