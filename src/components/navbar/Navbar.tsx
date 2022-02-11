@@ -12,8 +12,9 @@ const Navbar = () => {
     const [connected, setConnect] = useState(true);
 
     const [light, setLight] = useState(true);
-    const [energy, setEnergy] = useState(true);
-    const [temp, setTemp] = useState(true);
+    //
+    // const [energy, setEnergy] = useState(true);
+    // const [temp, setTemp] = useState(true);
 
     const clickLightHandler = () => {
         setLight(!light)

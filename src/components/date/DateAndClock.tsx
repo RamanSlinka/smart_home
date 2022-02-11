@@ -13,31 +13,33 @@ const DateAndClock = () => {
 
 
     return (
-        <div className={style.dateContainer}>
-            <div className={style.clock}>
-                {dateState.toLocaleString('en-US', {
-                    hour: 'numeric',
-                    minute: 'numeric',
-                    second: 'numeric',
-                    hour12: false,
-                })}
-            </div>
-            <span className={style.layer}></span>
-            <div>
-                <p className={style.dayOfWeek}>{dayOfWeek}</p>
-                <p className={style.date}>
-                    {' '}
-                    {dateState.toLocaleDateString('en-US', {
-                        day: 'numeric',
-                        month: 'long',
-                        year: 'numeric',
+        <div className='draggable'>
+            <div className={style.dateContainer}>
+                <div className={style.clock}>
+                    {dateState.toLocaleString('en-US', {
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        second: 'numeric',
+                        hour12: false,
                     })}
+                </div>
+                <span className={style.layer}></span>
+                <div>
+                    <p className={style.dayOfWeek}>{dayOfWeek}</p>
+                    <p className={style.date}>
+                        {' '}
+                        {dateState.toLocaleDateString('en-US', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric',
+                        })}
 
-                </p>
-            </div>
-            <div>
-                <img className={style.whiteLogo}
-                    src={whiteLogo} alt="whiteLogo"/>
+                    </p>
+                </div>
+                <div>
+                    <img className={style.whiteLogo}
+                         src={whiteLogo} alt="whiteLogo"/>
+                </div>
             </div>
         </div>
     );

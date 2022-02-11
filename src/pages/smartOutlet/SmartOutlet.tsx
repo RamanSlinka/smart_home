@@ -9,6 +9,7 @@ const SmartOutlet = () => {
 
     return (
         <div className={style.smartOutletContainer}>
+            <div className="draggable" style={{height: '50px'}}>
             <div className={style.blockWrapper}>
                 <div className={style.mainTitle}>
                     {/*name:*/}
@@ -24,21 +25,28 @@ const SmartOutlet = () => {
                     {/*or  disconnected / poor connection*/}
                 </div>
             </div>
+            </div>
+
+            <div className="draggable" style={{height: '50px'}}>
             <Switch isOn={valueSwitch}
                     handleToggle={() => setValueSwitch(!valueSwitch)}/>
+            </div>
 
+            <div className="draggable" style={{height: '50px'}}>
             <div className={style.blockWrapper}>
                 <h3 className={style.styleTitle}>Power consumption</h3>
                 {/*{powerConsumption}*/}
                 <p className={style.styleTitle}>2000 Watt</p>
             </div>
+            </div>
 
+            <div className="draggable" style={{height: '50px'}}>
             <div className={style.blockWrapper}
                  style={{height: '200px'}}>
                 <img className={style.smartOutletImage}
                      src={smartOutlet} alt="smart outlet"/>
             </div>
-
+            </div>
             <DateAndClock/>
         </div>
     );

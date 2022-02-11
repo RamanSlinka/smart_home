@@ -28,7 +28,7 @@
     border: #e8dd09 4px solid;
     border-radius: 7px;
     height: 100px;
-    width: 10%;
+    //width: 10%;
 
     .slideContainer {
       width: 100%;
@@ -75,7 +75,7 @@
   .colorWrapper {
     display: flex;
     flex-direction: row;
-    max-width: 40%;
+    max-width: 350px;
     height: 200px;
 
     margin: 5px;
@@ -95,7 +95,7 @@
 
     .colorPicker {
       height: 150px;
-      width: 150px;
+      width: 250px;
     }
   }
 
