@@ -1,0 +1,57 @@
+{
+  "devices": {
+    "SmartDevice": [
+      {
+        "type": [
+          "bulb",
+          "outlet",
+          "temperatureSensor"
+        ]
+      },
+      {
+        "id": [
+          {
+            "0": {
+              "type": "bulb",
+              "id": "0",
+              "name": "Lights",
+              "connectionState": "connected",
+              "isTurnedOn": "true",
+              "brightness": "20",
+              "color": "fff"
+            }
+          },
+          {
+            "1": {
+              "type": "outlet",
+              "id": "1",
+              "name": "Energy",
+              "connectionState": "connected",
+              "isTurnedOn": "true",
+              "powerConsumption": "1900"
+            }
+          },
+          {
+            "2": {
+              "type": "temperatureSensor",
+              "id": "2",
+              "name": "Temperature",
+              "connectionState": "'disconnected' ",
+              "temperature": "19"
+            }
+          }
+        ]
+      },
+      {
+        "name": ["Lights", "Energy", "Temperature" ]
+      },
+      {
+        "connectionState": [
+          "connected",
+          "disconnected",
+          "poorConnection"
+        ]
+      }
+    ]
+  }
+}
