@@ -3,11 +3,15 @@ import style from './SmartOutlet.module.scss'
 import Switch from "../../components/switch/Switch";
 import smartOutlet from '../../assets/images/outlet.jpeg'
 import DateAndClock from "../../components/date/DateAndClock";
+import Modal from '../../components/modal/Modal';
 
 const SmartOutlet = () => {
     const [valueSwitch, setValueSwitch] = useState(false);
 
+    const [modalActive, setModalActive] = useState<boolean>(true)
+
     return (
+        <Modal active={modalActive} setActive={setModalActive}>
         <div className={style.smartOutletContainer}>
             <div className="draggable" style={{height: '50px'}}>
             <div className={style.blockWrapper}>
@@ -47,8 +51,9 @@ const SmartOutlet = () => {
                      src={smartOutlet} alt="smart outlet"/>
             </div>
             </div>
-            <DateAndClock/>
+            {/*<DateAndClock/>*/}
         </div>
+        </Modal>
     );
 };
 

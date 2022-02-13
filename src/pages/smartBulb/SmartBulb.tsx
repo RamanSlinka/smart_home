@@ -4,15 +4,20 @@ import {RiLightbulbFlashFill} from "react-icons/ri";
 import style from './SmartBulb.module.scss';
 import Switch from "../../components/switch/Switch";
 import DateAndClock from "../../components/date/DateAndClock";
+import Modal from "../../components/modal/Modal";
 
 const SmartBulb = () => {
     const [valueSwitch, setValueSwitch] = useState(false);
     const [color, setColor] = useState("#9d9e9e");
     const [rangeVal, setRangeVal] = useState(null);
 
+    const [modalActive, setModalActive] = useState<boolean>(true)
+
+
     return (
+        <Modal active={modalActive} setActive={setModalActive}>
         <div className={style.smartBulbContainer}>
-            <div className="draggable" style={{height: '50px'}}>
+            <div className="draggable" style={{height: '100px'}}>
                 <div className={style.infoWrapper}>
                     <div className={style.mainTitle}>
                         {/*name:*/}
@@ -31,7 +36,7 @@ const SmartBulb = () => {
             </div>
 
             {/*Brightness*/}
-            <div className="draggable" style={{height: '50px'}}>
+            <div className="draggable" style={{height: '100px'}}>
                 <div className={style.dimmerLightWrapper}>
                     <p className={style.styleTitle}>Dimmer light : </p>
                     <div className={style.slideContainer}>
@@ -46,7 +51,7 @@ const SmartBulb = () => {
                     </div>
                 </div>
             </div>
-            <div className="draggable" style={{height: '50px'}}>
+            <div className="draggable" style={{height: '100px'}}>
                 <div className={style.colorWrapper}>
                     <div className={style.colorPickerText}>
                         <p>Color picker</p>
@@ -62,16 +67,17 @@ const SmartBulb = () => {
 
                 </div>
             </div>
-            <div className="draggable" style={{height: '50px'}}>
+            <div className="draggable" style={{height: '100px'}}>
                 <Switch
                     isOn={valueSwitch}
                     handleToggle={() => setValueSwitch(!valueSwitch)}
                 />
             </div>
 
-            <DateAndClock/>
+            {/*<DateAndClock/>*/}
 
         </div>
+        </Modal>
     );
 };
 

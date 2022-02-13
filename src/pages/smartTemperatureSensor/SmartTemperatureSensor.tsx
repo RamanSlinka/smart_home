@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './SmartTemperatureSensor.module.scss';
 import temperature from '../../assets/images/temperatura.jpeg';
 import DateAndClock from "../../components/date/DateAndClock";
+import Modal from "../../components/modal/Modal";
 const SmartTemperatureSensor = () => {
 
 
 
-
+    const [modalActive, setModalActive] = useState<boolean>(true)
 
 
     return (
+        <Modal active={modalActive} setActive={setModalActive}>
+
         <div className={style.smartOutletContainer}>
 
             <div className="draggable" style={{height: '50px'}}>
@@ -45,8 +48,9 @@ const SmartTemperatureSensor = () => {
                          src={temperature} alt="smart outlet"/>
                 </div>
             </div>
-            <DateAndClock/>
+            {/*<DateAndClock/>*/}
         </div>
+        </Modal>
     );
 };
 
