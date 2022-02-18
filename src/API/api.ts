@@ -11,7 +11,7 @@ export const smartHomeAPI = {
         return instance.get<SmartDevice[]>('devices/');
     },
     getDeviceDetails(deviceId: string) {
-        return instance.get<SmartDeviceDetails>(`/devices/${deviceId}`)
+        return instance.get<SmartDeviceDetails>(`/smartDeviceDetails/${deviceId}`)
 
     }
 
@@ -24,14 +24,6 @@ export type SmartDevice = {
     name: string;
     connectionState: string;
 
-    scenarios: {
-        isTurnedOn?: boolean;
-        brightness?: number;
-        color?: string;
-        powerConsumption?: number;
-        temperature?: number
-    }
-
 };
 
 export type SmartDeviceDetails =
@@ -42,45 +34,28 @@ export type SmartDeviceDetails =
 
 export type SmartBulb = {
     id: string;
-    type: string; //'bulb'
+    type: string;
     name: string;
     connectionState: string;
-    //
-    // isTurnedOn: boolean;
-    // brightness: number;
-    // color: string;
-
-    scenarios: {
-        isTurnedOn: boolean;
-        brightness: number;
-        color: string;
-    }
+    isTurnedOn: boolean;
+    brightness: number;
+    color: string;
 
 }
 
 export type SmartOutlet = {
     id: string;
-    type: string;  //'outlet'
+    type: string;
     name: string;
     connectionState: string;
-
-    // isTurnedOn: boolean;
-    // powerConsumption: number;
-
-    scenarios: {
-        isTurnedOn: boolean;
-        powerConsumption: number;
-    }
+    isTurnedOn: boolean;
+    powerConsumption: number;
 }
 
 export type SmartTemperatureSensor = {
     id: string;
-    type: string;  //'temperatureSensor'
+    type: string;
     name: string;
     connectionState: string;
-
-    //temperature: number;
-    scenarios: {
-        temperature: number
-    }
+    temperature: number;
 }

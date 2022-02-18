@@ -3,24 +3,20 @@ import imageRoom from '../../assets/images/room_BG.jpeg';
 import style from './Home.module.scss';
 import DateAndClock from "../../components/date/DateAndClock";
 import axios from "axios";
+import {fetchDevicesTC} from "../../store/reducer";
+import {useDispatch} from "react-redux";
 
 const Home = () => {
 
     const [items, setItems] = useState([]);
+    const dispatch = useDispatch()
+
     useEffect(() => {
 
-        async function fetchData() {
-            try {
-                const itemResponse = await axios.get("http://localhost:3001/api/v1/devices/");
-                setItems(itemResponse.data);
-            } catch (error) {
-                alert('ERROR')
-            }
-        }
-
-        fetchData();
-
-    }, [])
+        const thunk = fetchDevicesTC()
+        dispatch(thunk)
+        console.log(thunk)
+    }, [dispatch])
 
 
     return (
