@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {AiOutlineHome} from "react-icons/ai";
 import {IoBulbOutline} from "react-icons/io5";
 import {IoIosAddCircleOutline, IoMdOutlet} from "react-icons/io";
@@ -7,22 +7,39 @@ import style from "./Navbar.module.scss"
 import image from "../../assets/images/smartHome_.jpeg"
 import {NavLink} from "react-router-dom";
 import {PATH} from "../Routes";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../../store/store";
+import {fetchDevicesTC} from "../../store/devicesReducer";
+import {SmartDevice} from "../../API/api";
+
+
+
 
 const Navbar = () => {
     const [connected, setConnect] = useState(true);
-
     const [light, setLight] = useState(true);
-
     const [modalActive, setModalActive] = useState<boolean>(true)
 
-    //
-    // const [energy, setEnergy] = useState(true);
-    // const [temp, setTemp] = useState(true);
 
-    const clickLightHandler = () => {
-        setLight(!light)
-        console.log('hey')
-    }
+
+
+
+    const lightDevice = useSelector<AppRootStateType, SmartDevice>(state => state.devices.devices[0])
+    const energyDevice = useSelector<AppRootStateType, SmartDevice>(state => state.devices.devices[1])
+    const temperatureDevice = useSelector<AppRootStateType, SmartDevice>(state => state.devices.devices[2])
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+
+        const thunk = fetchDevicesTC()
+        dispatch(thunk)
+
+
+    }, [dispatch])
+
+
+
     return (
         <div className={style.navbarContainer}>
             <div>
@@ -43,24 +60,24 @@ const Navbar = () => {
                 <NavLink to={PATH.SMART_BULB}>
                     <NavItem
                         icon={<IoBulbOutline/>}
-                        title={'Lights'}
-                        status={connected}
-                        onClick={clickLightHandler}
+                        title={lightDevice.name}
+                        status={lightDevice.connectionState}
+
                     />
                 </NavLink>
 
                 <NavLink to={PATH.SMART_OUTLET}>
                     <NavItem
                         icon={<IoMdOutlet/>}
-                        title={'Energy'}
-                        status={connected}
+                        title={energyDevice.name}
+                        status={energyDevice.connectionState}
                     />
                 </NavLink>
                 <NavLink to={PATH.SMART_TEMPERATURE_SENSOR}>
                     <NavItem
                         icon={<FaTemperatureLow/>}
-                        title={'Temperature'}
-                        status={connected}
+                        title={temperatureDevice.name}
+                        status={temperatureDevice.connectionState}
                     />
                 </NavLink>
                 <NavItem
@@ -80,13 +97,13 @@ const NavItem: FC<any> = (props) => {
              onClick={props.onClick}
         >
             <div className={style.iconWrapper}>
-                {/*<NavLink to={props.path}>*/}
+
                 <div className={style.icon}> {props.icon}</div>
-                {/*</NavLink>*/}
+
                 <h3 className={style.iconName}>{props.title}</h3>
                 {props.status !== null
                     ? <div className={style.statusWrapper}><p className={style.status}>
-                        {props.status ? 'Connected' : 'Disconnected'}</p>
+                        {props.status  ? 'Connected' : 'Disconnected'}</p>
 
                     </div>
                     : ''}

@@ -35,7 +35,7 @@ const initialState: InitialStateType = {
             id: "3",
             type: "temperatureSensor",
             name: "Temperature",
-            connectionState: "'disconnected' ",
+            connectionState: "disconnected ",
             temperature: 19
         }
     ]

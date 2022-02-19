@@ -1,6 +1,6 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux'
 import thunkMiddleware, {ThunkAction} from 'redux-thunk'
-import {deviceReducer, SetDevicesActionType} from './reducer';
+import {deviceReducer, SetDevicesActionType} from './devicesReducer';
 import {deviceDetailsReducer, SetDeviceDetailsActionType} from "./detailsReducer";
 
 const rootReducer = combineReducers({

@@ -7,14 +7,13 @@ const instance = axios.create({
 });
 
 export const smartHomeAPI = {
-    getdevices() {
+    getDevices() {
         return instance.get<SmartDevice[]>('devices/');
     },
-    getDeviceDetails(deviceId: string) {
-        return instance.get<SmartDeviceDetails>(`/smartDeviceDetails/${deviceId}`)
+    getDeviceDetails() {
+        return instance.get<SmartDeviceDetails[]>(`smartDeviceDetails/`)
 
     }
-
 }
 
 //types
@@ -34,7 +33,7 @@ export type SmartDeviceDetails =
 
 export type SmartBulb = {
     id: string;
-    type: string;
+    type: "bulb" ;
     name: string;
     connectionState: string;
     isTurnedOn: boolean;
@@ -45,7 +44,7 @@ export type SmartBulb = {
 
 export type SmartOutlet = {
     id: string;
-    type: string;
+    type: "outlet";
     name: string;
     connectionState: string;
     isTurnedOn: boolean;
@@ -54,7 +53,7 @@ export type SmartOutlet = {
 
 export type SmartTemperatureSensor = {
     id: string;
-    type: string;
+    type: "temperatureSensor";
     name: string;
     connectionState: string;
     temperature: number;

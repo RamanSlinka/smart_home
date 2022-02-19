@@ -1,21 +1,45 @@
-import {SmartDevice, SmartDeviceDetails, smartHomeAPI} from "../API/api";
+import {SmartDevice,  smartHomeAPI} from "../API/api";
 import {AppThunkType} from "./store";
 
-type InitialStateType = any
-    // device: SmartDevice[]
-    // deviceDetails: SmartDeviceDetails
+export  type InitialStateType = {
+    devices: SmartDevice[]
+}
 
 export type SetDevicesActionType = ReturnType<typeof setDevicesAC>;
 
 
 
 type ActionsType = SetDevicesActionType
-const initialState: InitialStateType = []
+const initialState: InitialStateType = {
+   devices: [
+        {
+            id: "1",
+            type: "bulb",
+            name: "Lights",
+            connectionState: "connected"
+
+        },
+        {
+            id: "2",
+            type: "outlet",
+            name: "Energy",
+            connectionState: "connected",
+
+        },
+        {
+            id: "3",
+            type: "temperatureSensor",
+            name: "Temperature",
+            connectionState: "disconnected",
+
+        }
+    ]
+}
 
 export const deviceReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
         switch (action.type) {
             case 'SET-DEVICES':
-                return action.devices.map(device => ({...device}))
+                return {...state, devices: action.devices}
 
             default:
                 return state
@@ -23,15 +47,15 @@ export const deviceReducer = (state: InitialStateType = initialState, action: Ac
     }
 
 
-// actions
+// action
 export const setDevicesAC = (devices: SmartDevice[]) => ({type: 'SET-DEVICES', devices} as const)
 
 
-// thunks
+// thunk
 export const fetchDevicesTC = (): AppThunkType => {
     return (dispatch) => {
 
-        smartHomeAPI.getdevices()
+        smartHomeAPI.getDevices()
             .then((res) => {
                 dispatch(setDevicesAC(res.data))
 
