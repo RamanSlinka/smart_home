@@ -6,14 +6,19 @@ import interact from "interactjs";
 
 function App() {
 
+
+
     interact('.draggable')
         .draggable({
             inertia: true,
+
             modifiers: [
                 interact.modifiers.restrictRect({
                     restriction: 'parent',
-                    endOnly: true
-                })
+                    endOnly: true,
+
+                }),
+
             ],
             autoScroll: true,
 
