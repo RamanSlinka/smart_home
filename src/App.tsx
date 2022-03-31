@@ -59,7 +59,6 @@ function App() {
             <Navbar/>
             <div>
                 <RoutesPage/>
-                <RoutesPage/>
             </div>
         </div>
     );
