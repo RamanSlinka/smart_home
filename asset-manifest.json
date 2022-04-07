@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/smart_home/static/css/main.220caf30.css",
+    "main.js": "/smart_home/static/js/main.d9cad3e8.js",
+    "static/js/787.fc9e84ae.chunk.js": "/smart_home/static/js/787.fc9e84ae.chunk.js",
+    "static/media/room_BG.jpeg": "/smart_home/static/media/room_BG.d63a8fb940e23bda198b.jpeg",
+    "static/media/temperatura.jpeg": "/smart_home/static/media/temperatura.9736db69e96380b9a1db.jpeg",
+    "static/media/outlet.jpeg": "/smart_home/static/media/outlet.c704eb1c2f7ebc8c29e3.jpeg",
+    "static/media/smartHome_white.jpeg": "/smart_home/static/media/smartHome_white.5a1103eea11346bca7cd.jpeg",
+    "static/media/smartHome_.jpeg": "/smart_home/static/media/smartHome_.9121073b4ef76839acd4.jpeg",
+    "index.html": "/smart_home/index.html",
+    "main.220caf30.css.map": "/smart_home/static/css/main.220caf30.css.map",
+    "main.d9cad3e8.js.map": "/smart_home/static/js/main.d9cad3e8.js.map",
+    "787.fc9e84ae.chunk.js.map": "/smart_home/static/js/787.fc9e84ae.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.220caf30.css",
+    "static/js/main.d9cad3e8.js"
+  ]
+}
